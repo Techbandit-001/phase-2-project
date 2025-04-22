@@ -1,16 +1,25 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { RecipeForm } from './RecipeForm'
+//import { RecipeForm } from './RecipeForm'
+//import {RecipeForm} from "./RecipeForm"
 
-function App() {
-  // const [count, setCount] = useState(0)
-
+export function App() {
   return (
     <>
+    <header> 
+    <h1>Recipe book </h1>
+      </header>
+    <main className='min-h-screen flex p-8 gap-3'>
+      <div className='w-[35%]'>
+        <strong>+ Add recipes</strong>
+        <RecipeForm/>
+      </div>
+      <div className='flex-1'> Recipes </div>
+    </main>
+    <footer></footer>
       
     </>
   )
 }
 
-export default App
+
