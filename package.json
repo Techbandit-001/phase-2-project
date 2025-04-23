@@ -8,10 +8,11 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "db":"npx json-server --port 6001 db.json"
+    "db": "npx json-server --port 6001 db.json"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
+    "lucide-react": "^0.503.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.5.1",
