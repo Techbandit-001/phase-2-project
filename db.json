@@ -1,0 +1,12 @@
+{
+  "recipes": [
+    {
+      "id": "c0ff",
+      "image": "https://imgs.search.brave.com/Pcc8neinCqIapMjJMTAIXHyfDrV58uczdHwMDdZegg0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YWZyaWNhbmJpdGVz/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAxNC8wMi9DYXJp/aWJlYW4tUmljZS1h/bmQtQmVhbnMtNjUw/eDY1MC5qcGc",
+      "title": "rice beans",
+      "description": "amazing delicay",
+      "preparationTime": "3 minutes",
+      "category": "brunch"
+    }
+  ]
+}
