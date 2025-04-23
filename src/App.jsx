@@ -1,14 +1,18 @@
 import { useState } from 'react'
 import { RecipeForm } from './RecipeForm'
+David-Nav-Footer
+import Footer from './Footer'
+import NavBar from './NavBar'
 //import { RecipeForm } from './RecipeForm'
 //import {RecipeForm} from "./RecipeForm"
 import { ReceiptList } from './RecipeList'
+main
 
 export function App() {
   return (
     <>
     <header> 
-    <h1>Recipe book </h1>
+    <NavBar/>
       </header>
     <main className='min-h-screen flex p-8 gap-3'>
       <div className='w-[35%]'>
@@ -18,7 +22,9 @@ export function App() {
       </div>
       <div className='flex-1'> Recipes </div>
     </main>
-    <footer></footer>
+      <footer>
+        <Footer/>
+    </footer>
       
     </>
   )
