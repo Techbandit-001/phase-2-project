@@ -13,12 +13,23 @@ export function RecipeForm() {
   const handleSubmit = (e) => {
     // line 8 is used to ensure that the page doesn't reload on submission
     e.preventDefault();
-    //   
-    console.log("form submitted");
-    console.log(form);
-    // used to reset the form to its intial status 
-     setForm(initialData);
-  };
+  fetch('http://localhost:6001/recipes', {
+    method:"POST",
+    headers:{
+        "Content-Type": "application/json"
+
+    },
+    body:JSON.stringify(form),
+  })
+  .then((res)=>res.json())
+  .then ((data)=>{
+    console.log(data);
+      // used to reset the form to its intial status 
+      setForm(initialData);
+
+  }).catch(()=>{
+
+  })};
   const handleChange = (e) => {
     const { name, value } = e.target;
       setForm((prev) => ({
@@ -103,7 +114,7 @@ export function RecipeForm() {
          </div>
 
         <div className="mt-4">
-            <button className="border rounded-lg w-full p-2 bg-amber-500 hover:bg-gray-600">Add recipes</button>
+            <button type='submit'className="hover:cursor-pointer hover:bg-gray-600 border rounded-lg w-full p-2 bg-amber-500 ">Add recipes</button>
         </div>
       </form>
      
