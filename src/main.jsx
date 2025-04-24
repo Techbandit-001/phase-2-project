@@ -7,6 +7,7 @@ import RecipeDetails from "./pages/RecipeDetails";
 import { App } from "./App.jsx";
 import AboutUs from "./pages/About.jsx";
 import ContactUs from "./pages/Contact.jsx";
+import Favorites from "./pages/Favourites.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,10 +20,10 @@ const router = createBrowserRouter([
     element: <AboutUs />,
   },
 
-  // {
-  //   path: "/Favorites",
-  //   element: <Favorites />
-  // },
+  {
+    path: "/Favorites",
+    element: <Favorites />,
+  },
 
   {
     path: "/Contact",
@@ -35,13 +36,8 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")).render(
-
   <StrictMode>
     <RouterProvider router={router} />
     <Toaster position="top-center" />
   </StrictMode>
-
 );
-
-   
-
