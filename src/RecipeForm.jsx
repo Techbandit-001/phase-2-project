@@ -1,4 +1,5 @@
 import {  useState } from "react";
+import toast from "react-hot-toast";
 
 export function RecipeForm() {
   const initialData = {
@@ -24,10 +25,14 @@ export function RecipeForm() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        toast.success('Recipe created successfully')
         // used to reset the form to its intial status
         setForm(initialData);
       })
-      .catch(() => {});
+      .catch(() => {
+        toast.error('Unable to save')
+        // communicates on errors 
+      });
   };
 
   const handleChange = (e) => {
