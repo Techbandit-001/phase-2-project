@@ -1,13 +1,7 @@
 import { useEffect, useState } from "react";
 
-export function RecipeList() {
-  // using set state to update and
-  const [recipes, setRecipes] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:6001/recipes")
-      .then((res) => res.json())
-      .then(setRecipes);
-  }, []);
+export function RecipeList({recipes}) {
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
       {recipes.map((recipe) => (
