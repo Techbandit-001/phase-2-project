@@ -37,15 +37,13 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
 
+  <StrictMode>
     <RouterProvider router={router} />
-    {/* <App /> */}
+    <Toaster position="top-center" />
   </StrictMode>
+
 );
 
-    <App />
-   <Toaster position='top-center'/>  
-  </StrictMode>,
-)
+   
 
