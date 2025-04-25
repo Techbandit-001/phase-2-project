@@ -4,6 +4,11 @@ import { RecipeCard } from "./RecipeCard";
 
 export function RecipeList({recipes}) {
   
+  const handleDelete = (id) => {
+    setRecipes((prevRecipes) =>
+      prevRecipes.filter((recipe) => recipe.id !== id)
+    );
+  };
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
@@ -23,7 +28,8 @@ export function RecipeList({recipes}) {
         // </div>
 
         // RecipeCard for each recipe
-        <RecipeCard key={recipe.id} recipe={recipe} />
+        <RecipeCard key={recipe.id} recipe={recipe}
+        onDelete={handleDelete}/>
       ))}
     </div>
   );
