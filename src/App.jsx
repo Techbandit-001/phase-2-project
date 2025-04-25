@@ -18,7 +18,7 @@ export function App() {
   useEffect(() => {
     fetch("http://localhost:6001/recipes")
       .then((res) => res.json())
-      .then(setRecipes);
+      .then ((data) => setRecipes(data));
   }, []);
 // This filters the recipes via title using the searchTerm and its case-sensitive
   const filteredRecipes = recipes.filter((recipe) =>
@@ -45,7 +45,7 @@ export function App() {
               Conditional rendering is also happening where if the filteredRecipes has results the recipes will display
               else, if not found a message "Oops! Recipe not found" will display*/}
           {filteredRecipes.length > 0 ? (
-            <RecipeList recipes={filteredRecipes} />
+            <RecipeList recipes={filteredRecipes} setRecipes={setRecipes}/>
           ) : (
             <div className="flex items-center justify-center h-100">
               <p className="text-center font-semibold">

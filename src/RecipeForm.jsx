@@ -28,6 +28,7 @@ export function RecipeForm() {
         toast.success('Recipe created successfully')
         // used to reset the form to its intial status
         setForm(initialData);
+        window.location.reload(); //This line reloads the page.
       })
       .catch(() => {
         toast.error('Unable to save')
@@ -57,7 +58,7 @@ export function RecipeForm() {
             id="title"
             className="border p-2 bg-white w-full rounded-lg"
             type="text"
-            placeholder="Ingredients"
+            placeholder="Food"
             name="title"
             value={form.title}
             onChange={handleChange}
