@@ -1,23 +1,35 @@
+// Import hooks
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 // import { RecipeCard } from "../RecipeCard";
 
+// This function is for displaying a detailed info about a single Recipe
 function RecipeDetails() {
+
+  // State to store fetched recipe data
   const [recipe, setRecipe] = useState();
  
+  // The Use param returns the dynamic part of the route/simply grabs route parameters and then we destructure to get the recipeId directly
   const { recipeId } = useParams();
 //   const params = useParams();
 
   // console.log(params);
+
+  // UseEffect Runs after the component recipeId changes
   useEffect(() => {
     fetch(`http://localhost:6001/recipes/${recipeId}`) //destructured as recipeId
       .then((res) => res.json())
-      .then((data) => setRecipe(data));
+      .then((data) => setRecipe(data)); //Saves the data to state
   }, [recipeId]);
 
+
+  // While the data is loading/lets say undefined, it shows a loading message(conditional rendering)
   if (!recipe) {
     return <div className="p-4 text-center text-gray-500">Loading recipe...</div>;
   }
+
+
+// Now when the Recipe is loaded, it renders the details
   return (
     <div className="p-4 max-w-5xl mx-auto">
       <h1 className="text-2xl font-bold mb-6">Recipe Details</h1>

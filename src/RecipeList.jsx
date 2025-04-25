@@ -1,9 +1,17 @@
 import { useEffect, useState } from "react";
 // imported RecipeCard Component to render each recipe nicely
 import { RecipeCard } from "./RecipeCard";
-
-export function RecipeList({recipes}) {
+// Recieves both recipes and setRecipes form the parent(App.jsx)
+export function RecipeList({recipes, setRecipes}) {
   
+  // This handler removes a recipe from the list after a succesful deletion
+  const handleDelete = (id) => {
+
+    // This filters out the deleted recipe by ID and updates the state
+    setRecipes((prevRecipes) =>
+      prevRecipes.filter((recipe) => recipe.id !== id)
+    );
+  };
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
@@ -22,8 +30,11 @@ export function RecipeList({recipes}) {
         //   <span className="ml-2 text-amber-600">{recipe.preparationTime}</span>
         // </div>
 
-        // RecipeCard for each recipe
-        <RecipeCard key={recipe.id} recipe={recipe} />
+        // Renders the RecipeCard for each recipe and passes handleDelete
+        <RecipeCard
+          key={recipe.id}
+          recipe={recipe}
+        onDelete={handleDelete}/>
       ))}
     </div>
   );
