@@ -19,19 +19,37 @@ function RecipeDetails() {
     return <div className="p-4 text-center text-gray-500">Loading recipe...</div>;
   }
   return (
-    <div className="p-4 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4">{recipe.title}</h1>
-      <img
-        src={recipe.image}
-        alt={recipe.title}
-        className="w-full h-64 object-cover rounded"
-      />
-      <p className="mt-4 text-gray-700">{recipe.description}</p>
-      <div className="mt-4 flex justify-between text-sm text-amber-600">
-        <span className="bg-amber-100 px-2 py-1 rounded">
-          {recipe.category}
-        </span>
-        <span>{recipe.preparationTime}</span>
+    <div className="p-4 max-w-5xl mx-auto">
+      <h1 className="text-2xl font-bold mb-6">Recipe Details</h1>
+      <div>
+        <img
+          src={recipe.image}
+          alt={recipe.title}
+          className="w-full md:w-1/2 h-64 object-cover rounded-xl"
+        />
+        {/* Details container now */}
+
+        <div className="flex-1 space-y-3">
+          <h2 className="text-2xl font-semibold">{recipe.title}</h2>
+          <ul className="list-disc list-inside text-gray-700 space-y-1">
+
+            {/* letting the description appear as unordered list */}
+            {recipe.description
+              .split(".")// This line breaks the string into parts
+              .map((step, index) =>//Loopin over each step 
+                step.trim() ? <li key={index}>{step.trim()}.</li> : null //Render the list item if the step if it doesnt have empty spaces
+              )}
+          </ul>
+
+          <div className="flex gap-4 text-sm text-gray-600 mt-2">
+            <span className="flex items-center gap-1">
+              ⏱️ {recipe.preparationTime}
+            </span>
+            <span className="flex items-center gap-1 bg-amber-100 px-2 py-1 rounded text-amber-700">
+              {recipe.category}
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );
