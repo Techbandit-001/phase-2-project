@@ -4,15 +4,20 @@ import { useParams } from "react-router-dom";
 
 function RecipeDetails() {
   const [recipe, setRecipe] = useState();
+ 
   const { recipeId } = useParams();
 //   const params = useParams();
 
   // console.log(params);
   useEffect(() => {
-    fetch(`http://localhost:6001/recipes/${params.recipeId}`)
+    fetch(`http://localhost:6001/recipes/${recipeId}`) //destructured as recipeId
       .then((res) => res.json())
       .then((data) => setRecipe(data));
   }, [recipeId]);
+
+  if (!recipe) {
+    return <div className="p-4 text-center text-gray-500">Loading recipe...</div>;
+  }
   return (
     <div className="p-4 max-w-3xl mx-auto">
       <h1 className="text-3xl font-bold mb-4">{recipe.title}</h1>
