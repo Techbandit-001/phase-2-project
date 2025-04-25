@@ -19,10 +19,12 @@ export function RecipeCard({ recipe, onDelete }) {
       .then((res) => {
         if (res.ok) {
           onDelete(recipe.id); //Ask the parent to remove the recipe from the RecipeList
+          toast.success("Recipe deleted!"); //Ask the parent to remove the recipe from the RecipeList
         }
       })
       .catch((err) => {
         console.error("Delete error:", err);
+        toast.error("Something went wrong.");
       });
   };
   return (
