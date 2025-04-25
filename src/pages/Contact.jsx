@@ -23,25 +23,25 @@ function ContactUs() {
               <div className="hidden md:flex space-x-4">
                 <Link
                   to="/"
-                  className="hover:underline text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                  className="hover:underline text-white px-4 py-2 rounded  hover:bg-orange-700  transition"
                 >
                   Home
                 </Link>
                 <Link
                   to="/favorites"
-                  className="hover:underline text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                  className="hover:underline text-white px-4 py-2 rounded  hover:bg-orange-700  transition"
                 >
                   Favorites
                 </Link>
                 <Link
                   to="/contact"
-                  className="hover:underline text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                  className="hover:underline text-white px-4 py-2 rounded  hover:bg-orange-700  transition"
                 >
                   Contact Us
                 </Link>
                 <Link
                   to="/about"
-                  className="hover:underline text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                  className="hover:underline text-white px-4 py-2 rounded  hover:bg-orange-700  transition"
                 >
                   About
                 </Link>
@@ -118,7 +118,7 @@ function ContactUs() {
           ></textarea>
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition"
+            className="w-full bg-orange-600 text-white py-3 rounded  hover:bg-orange-700  transition"
           >
             Send Message
           </button>
