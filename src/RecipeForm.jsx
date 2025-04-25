@@ -57,7 +57,7 @@ export function RecipeForm() {
             id="title"
             className="border p-2 bg-white w-full rounded-lg"
             type="text"
-            placeholder="Ingredients"
+            placeholder="Food"
             name="title"
             value={form.title}
             onChange={handleChange}
