@@ -31,7 +31,15 @@ function RecipeDetails() {
 
         <div className="flex-1 space-y-3">
           <h2 className="text-2xl font-semibold">{recipe.title}</h2>
-          <p className=" text-gray-700">{recipe.description}</p>
+          <ul className="list-disc list-inside text-gray-700 space-y-1">
+
+            {/* letting the description appear as unordered list */}
+            {recipe.description
+              .split(".")// This line breaks the string into parts
+              .map((step, index) =>//Loopin over each step 
+                step.trim() ? <li key={index}>{step.trim()}.</li> : null //Render the list item if the step if it doesnt have empty spaces
+              )}
+          </ul>
 
           <div className="flex gap-4 text-sm text-gray-600 mt-2">
             <span className="flex items-center gap-1">
